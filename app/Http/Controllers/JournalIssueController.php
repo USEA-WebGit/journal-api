@@ -16,6 +16,7 @@ class JournalIssueController extends Controller
     {
         $journalIssue = Issue::findOrFail($id);
         $journalIssue->update(['view' => $request->view]);
+        var_dump($journalIssue);
         return response()->json(['message' => 'View count updated']);
     }
 }

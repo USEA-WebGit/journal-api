@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JournalIssueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/test', [JournalIssueController::class, 'updateViewCount']);
+// Route::get('/documents/{filename}', function ($filename) {
+//     $path = 'assets/journal/' . $filename;
+
+//     if (Storage::disk('public')->exists($path)) {
+//         return response()->file(storage_path('app/public/' . $path));
+//     }
+
+//     abort(404);
+// });

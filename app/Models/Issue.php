@@ -33,7 +33,7 @@ class Issue extends Model
     // Relationship with journal keywords (many-to-many)
     public function journalKeyword()
     {
-        return $this->belongsToMany(JournalKeywords::class, 'issue_keywords', 'key_id', 'issue_id');
+        return $this->belongsToMany(JournalKeywords::class, 'issue_keywords', 'issue_id', 'key_id');
     }
 
     // Relationship with journal type (many-to-one)

@@ -30,11 +30,18 @@ class JournalIssueController extends Controller
             'volume_published' => $issue->publicationIssue->volume_number,
             'issue_published' => $issue->publicationIssue->issue_number,
             'year_published' => $issue->publicationIssue->year,
+            'date_published' => $issue->date_published,
             'number_page' => $issue->number_page,
             'abstract' => $issue->abstract,
             'pdf' => $issue->pdf,
             'issue_reference' => $issue->issue_reference,
             'view' => $issue->view,
+            'keywords' => $issue->journalKeyword->map(function($keywords) {
+                return [
+                    'id' => $keywords->id,
+                    'name' => $keywords->name_en,
+                ];
+            }),
             'status' => $issue->status,
             'created_at' => $issue->created_at,
             'updated_at' => $issue->updated_at,
